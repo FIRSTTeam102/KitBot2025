@@ -7,6 +7,10 @@ package frc.robot.subsystems;
 import com.revrobotics.spark.SparkBase.PersistMode;
 import com.revrobotics.spark.SparkBase.ResetMode;
 import com.revrobotics.spark.SparkLowLevel.MotorType;
+
+import org.littletonrobotics.junction.AutoLog;
+import org.littletonrobotics.junction.AutoLogOutput;
+
 import com.revrobotics.spark.SparkMax;
 import com.revrobotics.spark.config.SparkMaxConfig;
 
@@ -23,12 +27,29 @@ public class CANDriveSubsystem extends SubsystemBase {
 
   private final DifferentialDrive drive;
 
+  @AutoLogOutput
+  private final double leftLeaderOutput;
+  @AutoLogOutput
+
+  private final double rightLeaderOutput;
+  @AutoLogOutput
+
+  private final double rightFollowerOutput;
+  @AutoLogOutput
+  private final double leftFollowerOutput;
+
   public CANDriveSubsystem() {
     // create brushed motors for drive
     leftLeader = new SparkMax(DriveConstants.LEFT_LEADER_ID, MotorType.kBrushed);
     leftFollower = new SparkMax(DriveConstants.LEFT_FOLLOWER_ID, MotorType.kBrushed);
     rightLeader = new SparkMax(DriveConstants.RIGHT_LEADER_ID, MotorType.kBrushed);
     rightFollower = new SparkMax(DriveConstants.RIGHT_FOLLOWER_ID, MotorType.kBrushed);
+    
+    leftLeaderOutput = leftLeader.getOutputCurrent();
+    rightLeaderOutput = rightLeader.getOutputCurrent();
+    rightFollowerOutput = rightFollower.getOutputCurrent();
+    leftFollowerOutput = leftFollower.getOutputCurrent();
+
 
     // set up differential drive class
     drive = new DifferentialDrive(leftLeader, rightLeader);

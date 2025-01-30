@@ -6,6 +6,9 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.RollerConstants;
+
+import org.littletonrobotics.junction.AutoLogOutput;
+
 import com.revrobotics.spark.SparkMax;
 import com.revrobotics.spark.SparkBase.PersistMode;
 import com.revrobotics.spark.SparkBase.ResetMode;
@@ -14,6 +17,7 @@ import com.revrobotics.spark.config.SparkMaxConfig;
 
 /** Class to run the rollers over CAN */
 public class CANRollerSubsystem extends SubsystemBase {
+  @AutoLogOutput
   private final SparkMax rollerMotor;
 
   public CANRollerSubsystem() {
