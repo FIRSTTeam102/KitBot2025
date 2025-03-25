@@ -37,7 +37,7 @@ public class Lights {
     // Configure the CANdle
     CANdleConfiguration config = new CANdleConfiguration();
       config.brightnessScalar = 0.5;
-      config.stripType = LEDStripType.GRB;
+      config.stripType = LEDStripType.RGB;
     candle.configAllSettings(config);
   }
   public static Lights getInstance()
@@ -62,7 +62,7 @@ public class Lights {
       case BLUE:
         break;
     }
-      candle.animate(toAnimate,1);
+      candle.animate(toAnimate,0);
     
   }
 }
