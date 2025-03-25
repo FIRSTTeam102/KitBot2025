@@ -15,6 +15,8 @@ import frc.robot.commands.DriveCommand;
 import frc.robot.commands.RollerCommand;
 import frc.robot.subsystems.CANDriveSubsystem;
 import frc.robot.subsystems.CANRollerSubsystem;
+import frc.robot.subsystems.Lights;
+import frc.robot.subsystems.Lights.AnimationTypes;
 
 /**
  * This class is where the bulk of the robot should be declared. Since
@@ -52,6 +54,7 @@ public class RobotContainer {
     // add additional auto modes you can add additional lines here with
     // autoChooser.addOption
     autoChooser.setDefaultOption("Autonomous", new AutoCommand(driveSubsystem));
+    Lights.getInstance().setPattern(AnimationTypes.Rainbow);
   }
 
   /**
