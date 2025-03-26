@@ -54,7 +54,7 @@ public class RobotContainer {
     // add additional auto modes you can add additional lines here with
     // autoChooser.addOption
     autoChooser.setDefaultOption("Autonomous", new AutoCommand(driveSubsystem));
-    Lights.getInstance().setPattern(AnimationTypes.Rainbow);
+    Lights.getInstance().setPattern(AnimationTypes.Twinkle);
   }
 
   /**

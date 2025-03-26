@@ -9,9 +9,14 @@ import edu.wpi.first.hal.HAL;
 // import edu.wpi.first.wpilibj.TimedRobot; --commented bcs not used
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import frc.robot.subsystems.Lights;
+import frc.robot.subsystems.Lights.AnimationTypes;
+
 import org.littletonrobotics.junction.LoggedRobot;
 import org.littletonrobotics.junction.Logger;
 import org.littletonrobotics.junction.networktables.NT4Publisher;
+
+import com.ctre.phoenix.led.RainbowAnimation;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -34,6 +39,7 @@ public class Robot extends LoggedRobot {
    */
   @Override
   public void robotInit() {
+    Lights.getInstance().setPattern(AnimationTypes.RED);
     // Instantiate our RobotContainer. This will perform all our button bindings,
     // and put our
     // autonomous chooser on the dashboard.
@@ -84,6 +90,7 @@ public class Robot extends LoggedRobot {
    */
   @Override
   public void autonomousInit() {
+    Lights.getInstance().setPattern(AnimationTypes.L4);
     m_autonomousCommand = m_robotContainer.getAutonomousCommand();
 
     // schedule the autonomous command (example)
@@ -99,6 +106,7 @@ public class Robot extends LoggedRobot {
 
   @Override
   public void teleopInit() {
+    Lights.getInstance().setPattern(AnimationTypes.Algae);
     // This makes sure that the autonomous stops running when
     // teleop starts running. If you want the autonomous to
     // continue until interrupted by another command, remove
