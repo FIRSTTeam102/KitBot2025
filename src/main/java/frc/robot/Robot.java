@@ -39,7 +39,7 @@ public class Robot extends LoggedRobot {
    */
   @Override
   public void robotInit() {
-    Lights.getInstance().setPattern(AnimationTypes.RED);
+    Lights.getInstance().setPattern(AnimationTypes.USA);
     // Instantiate our RobotContainer. This will perform all our button bindings,
     // and put our
     // autonomous chooser on the dashboard.
@@ -106,7 +106,7 @@ public class Robot extends LoggedRobot {
 
   @Override
   public void teleopInit() {
-    Lights.getInstance().setPattern(AnimationTypes.Algae);
+    Lights.getInstance().setPattern(AnimationTypes.USA);
     // This makes sure that the autonomous stops running when
     // teleop starts running. If you want the autonomous to
     // continue until interrupted by another command, remove

@@ -37,7 +37,8 @@ public class Lights {
     SetAll,
     Coral,
     Algae,
-    L4
+    L4,
+    USA
   
 }
   private Lights(){
@@ -63,7 +64,7 @@ public class Lights {
     Animation toAnimate = null;
     switch (animation) {
       case L4:
-        toAnimate = new LarsonAnimation(255,30,0,0, 0.25,68, LarsonAnimation.BounceMode.Back,8, 8);
+        toAnimate = new LarsonAnimation(255,30,0,0, 0.75,68, LarsonAnimation.BounceMode.Back,9, 8);
         break;
       case RED:
         toAnimate = new TwinkleAnimation(255, 0, 0, 0, 0.75, 68, TwinkleAnimation.TwinklePercent.Percent88, 0 );
@@ -75,7 +76,12 @@ public class Lights {
         toAnimate = new ColorFlowAnimation(0, 255, 0, 0, 0.5, 68, ColorFlowAnimation.Direction.Forward, 0);
         break;
       case Coral:
-        toAnimate = new ColorFlowAnimation(0, 255, 0, 0, 0.5, 68, ColorFlowAnimation.Direction.Forward, 0);
+        toAnimate = new ColorFlowAnimation(255, 255, 255, 0, 0.5, 68, ColorFlowAnimation.Direction.Forward, 0);
+        break;
+      case USA:
+        toAnimate = new TwinkleAnimation(60, 60, 60, 60,0.7, 22,TwinkleAnimation.TwinklePercent.Percent76, 0);
+        toAnimate = new TwinkleAnimation(60, 60, 60, 60,0.7, 44,TwinkleAnimation.TwinklePercent.Percent76, 23);
+        toAnimate = new TwinkleAnimation(60, 60, 60, 60,0.7, 60,TwinkleAnimation.TwinklePercent.Percent76, 45);
         break;
     }
       candle.animate(toAnimate,0);
