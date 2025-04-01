@@ -12,6 +12,7 @@ import com.ctre.phoenix.led.ColorFlowAnimation;
 import com.ctre.phoenix.led.FireAnimation;
 import com.ctre.phoenix.led.LarsonAnimation;
 import com.ctre.phoenix.led.RainbowAnimation;
+import com.ctre.phoenix.led.SingleFadeAnimation;
 import com.ctre.phoenix.led.StrobeAnimation;
 import com.ctre.phoenix.led.TwinkleAnimation;
 
@@ -38,7 +39,9 @@ public class Lights {
     Coral,
     Algae,
     L4,
-    USA
+    USA,
+    OutOfRange,
+    Stuck
   
 }
   private Lights(){
@@ -83,6 +86,11 @@ public class Lights {
         toAnimate = new TwinkleAnimation(60, 60, 60, 60,0.7, 44,TwinkleAnimation.TwinklePercent.Percent76, 23);
         toAnimate = new TwinkleAnimation(60, 60, 60, 60,0.7, 60,TwinkleAnimation.TwinklePercent.Percent76, 45);
         break;
+      case OutOfRange:
+        toAnimate = new StrobeAnimation (255, 255, 0, 0, 0.5, 68, 0);
+        break;
+      case Stuck:
+        toAnimate = new SingleFadeAnimation (255, 50, 255, 0, 0.75, 68, 0);
     }
       candle.animate(toAnimate,0);
     
