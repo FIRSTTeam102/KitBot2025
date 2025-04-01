@@ -67,7 +67,7 @@ public class Lights {
     Animation toAnimate = null;
     switch (animation) {
       case L4:
-        toAnimate = new LarsonAnimation(255,30,0,0, 0.75,68, LarsonAnimation.BounceMode.Back,9, 8);
+        toAnimate = new LarsonAnimation(255,30,0,0, 0.75,68, LarsonAnimation.BounceMode.Back,15, 8);
         break;
       case RED:
         toAnimate = new TwinkleAnimation(255, 0, 0, 0, 0.75, 68, TwinkleAnimation.TwinklePercent.Percent88, 0 );
@@ -82,9 +82,9 @@ public class Lights {
         toAnimate = new ColorFlowAnimation(255, 255, 255, 0, 0.5, 68, ColorFlowAnimation.Direction.Forward, 0);
         break;
       case USA:
-        toAnimate = new TwinkleAnimation(60, 60, 60, 60,0.7, 22,TwinkleAnimation.TwinklePercent.Percent76, 0);
-        toAnimate = new TwinkleAnimation(60, 60, 60, 60,0.7, 44,TwinkleAnimation.TwinklePercent.Percent76, 23);
-        toAnimate = new TwinkleAnimation(60, 60, 60, 60,0.7, 60,TwinkleAnimation.TwinklePercent.Percent76, 45);
+        toAnimate = new TwinkleAnimation(60, 60, 60, 0,0.7, 22,TwinkleAnimation.TwinklePercent.Percent76, 0);
+        toAnimate = new TwinkleAnimation(60, 60, 60, 0,0.7, 44,TwinkleAnimation.TwinklePercent.Percent76, 23);
+        toAnimate = new TwinkleAnimation(60, 60, 60, 0,0.7, 60,TwinkleAnimation.TwinklePercent.Percent76, 45);
         break;
       case OutOfRange:
         toAnimate = new StrobeAnimation (255, 255, 0, 0, 0.5, 68, 0);
